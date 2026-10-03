@@ -2,192 +2,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090016">
 <title>Happy Birthday Ranjeet ❤️</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden}
-body{font-family:Georgia,"Times New Roman",serif;background:#05030b}
-#scene{position:relative;width:100%;height:100vh;overflow:hidden;background:radial-gradient(circle at 50% 55%,rgba(125,20,85,.3),transparent 32%),radial-gradient(circle at 20% 20%,rgba(65,30,130,.18),transparent 30%),linear-gradient(180deg,#05030b,#100618 55%,#05030b)}
-.stars{position:absolute;inset:0;pointer-events:none}
-.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;box-shadow:0 0 8px white;opacity:.3;animation:twinkle 2s ease-in-out infinite alternate}
-@keyframes twinkle{from{opacity:.15;transform:scale(.5)}to{opacity:1;transform:scale(1.6)}}
-.intro{position:absolute;top:8%;width:100%;text-align:center;color:rgba(255,255,255,.75);letter-spacing:3px;font:14px Arial,sans-serif;transition:opacity .8s}
-.intro.hide{opacity:0}
-.heart-area{position:absolute;left:50%;top:50%;width:220px;height:220px;transform:translate(-50%,-50%);transition:transform 1s ease,opacity .8s}
-.heart-area.hit{animation:heartHit .75s ease forwards}
-.heart{position:absolute;width:125px;height:125px;left:48px;top:48px;background:linear-gradient(135deg,#ffd1eb,#ff68b4 22%,#f01883 55%,#97003f);transform:rotate(-45deg);border-radius:17px;filter:drop-shadow(0 0 10px #ff3fa0) drop-shadow(0 0 30px #ff168c) drop-shadow(0 0 65px rgba(255,20,140,.5));animation:heartBeat 1.6s ease-in-out infinite}
-.heart:before,.heart:after{content:"";position:absolute;width:125px;height:125px;border-radius:50%;background:inherit}
-.heart:before{top:-62px;left:0}.heart:after{left:62px;top:0}
-.shine{position:absolute;width:25px;height:48px;left:72px;top:58px;background:rgba(255,255,255,.65);border-radius:50%;transform:rotate(-45deg);filter:blur(2px);z-index:5}
-@keyframes heartBeat{0%,100%{transform:rotate(-45deg) scale(1)}50%{transform:rotate(-45deg) scale(1.06)}}
-@keyframes heartHit{0%{transform:translate(-50%,-50%) scale(1)}25%{transform:translate(-50%,-50%) scale(1.2)}45%{transform:translate(-50%,-50%) scale(.9)}100%{transform:translate(-50%,-50%) scale(0);opacity:0}}
-.arrow-button{position:absolute;left:12%;top:52%;width:150px;height:70px;border:0;background:transparent;cursor:pointer;z-index:20;transform:rotate(-7deg);transition:transform .25s ease}
-.arrow-button:hover{transform:rotate(-7deg) scale(1.08)}
-.arrow-button:active{transform:rotate(-7deg) scale(.95)}
-.arrow{position:absolute;left:0;top:31px;width:135px;height:5px;border-radius:10px;background:linear-gradient(90deg,#fff,#d9d9d9);box-shadow:0 0 5px white,0 0 12px rgba(255,255,255,.6)}
-.arrow:after{content:"";position:absolute;right:-20px;top:-9px;border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:23px solid #e9e9e9;filter:drop-shadow(0 0 4px white)}
-.arrow:before{content:"";position:absolute;left:-5px;top:-15px;width:24px;height:30px;border-left:4px solid #ff4fa8;border-top:3px solid #ff4fa8;transform:skewY(-25deg)}
-.click-text{position:absolute;left:50%;top:62px;transform:translateX(-50%);white-space:nowrap;color:rgba(255,255,255,.8);font:12px Arial,sans-serif;letter-spacing:1px;animation:clickPulse 1.5s infinite}
-@keyframes clickPulse{0%,100%{opacity:.45}50%{opacity:1}}
-.arrow-button.flying{animation:shootArrow 1.45s cubic-bezier(.55,.05,.15,1) forwards;pointer-events:none}
-.arrow-button.flying .click-text{display:none}
-@keyframes shootArrow{0%{left:12%;top:52%;transform:rotate(-7deg)}35%{left:30%;top:43%;transform:rotate(-13deg)}65%{left:49%;top:48%;transform:rotate(2deg)}100%{left:54%;top:50%;transform:rotate(0deg)}}
-.impact{position:absolute;left:50%;top:50%;width:30px;height:30px;border-radius:50%;border:3px solid white;box-shadow:0 0 15px white,0 0 35px #ff2693,0 0 70px #ff2693;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none}
-.impact.show{animation:impactRing 1s ease-out forwards}
-@keyframes impactRing{0%{opacity:1;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(9)}}
-.message{position:absolute;left:50%;top:14%;width:100%;text-align:center;opacity:0;transform:translate(-50%,-20px) scale(.7);pointer-events:none}
-.message.show{animation:messageReveal 1.8s cubic-bezier(.2,.8,.2,1) forwards}
-.message h1{font-size:clamp(42px,10vw,92px);font-weight:normal;color:white;text-shadow:0 0 8px white,0 0 20px #ff8bca,0 0 45px #ff238f,0 0 80px #ff238f}
-.message .name{display:block;margin-top:8px;font:700 clamp(25px,6vw,55px) Arial,sans-serif;color:#ffb9df;letter-spacing:5px;text-shadow:0 0 15px #ff238f,0 0 35px #ff238f}
-.message .subtitle{margin-top:15px;font:clamp(13px,3vw,20px) Arial,sans-serif;color:rgba(255,255,255,.85);letter-spacing:4px}
-@keyframes messageReveal{0%{opacity:0;transform:translate(-50%,40px) scale(.65)}60%{opacity:1;transform:translate(-50%,-5px) scale(1.05)}100%{opacity:1;transform:translate(-50%,0) scale(1)}}
-.particle{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;opacity:0;pointer-events:none;box-shadow:0 0 10px currentColor}
-.particle.explode{animation:particleExplosion 1.8s cubic-bezier(.1,.7,.2,1) forwards}
-@keyframes particleExplosion{0%{opacity:1;transform:translate(-50%,-50%) translate(0,0) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(600deg) scale(0)}}
-.firework{position:absolute;width:5px;height:5px;border-radius:50%;opacity:0;box-shadow:0 0 8px white,0 0 18px #ff48a6}
-.firework.go{animation:firework .9s ease-out forwards}
-@keyframes firework{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--fx),var(--fy)) scale(0)}}
-.float-heart{position:absolute;bottom:-40px;color:#ff5eae;opacity:0;filter:drop-shadow(0 0 8px #ff238f);pointer-events:none}
-.float-heart.go{animation:floatHeart var(--duration) linear forwards}
-@keyframes floatHeart{0%{opacity:0;transform:translateY(0) scale(.4) rotate(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(-110vh) scale(1.2) rotate(360deg)}}
-.confetti{position:absolute;top:-20px;width:7px;height:14px;opacity:0;pointer-events:none}
-.confetti.go{animation:confettiFall var(--duration) linear forwards}
-@keyframes confettiFall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(110vh) rotate(720deg)}}
-.replay{position:absolute;left:50%;bottom:30px;transform:translateX(-50%) scale(0);opacity:0;padding:12px 25px;border:1px solid rgba(255,255,255,.25);border-radius:30px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);color:white;cursor:pointer;font:14px Arial,sans-serif}
-.replay.show{animation:replayShow .7s ease forwards 2s}
-@keyframes replayShow{to{opacity:1;transform:translateX(-50%) scale(1)}}
-@media(max-width:600px){
-.arrow-button{left:4%;transform:scale(.8) rotate(-7deg)}
-.heart-area{transform:translate(-50%,-50%) scale(.8)}
-.intro{font-size:11px}
-@keyframes shootArrow{0%{left:4%;top:52%;transform:scale(.8) rotate(-7deg)}35%{left:25%;top:43%;transform:scale(.8) rotate(-13deg)}65%{left:47%;top:48%;transform:scale(.8) rotate(2deg)}100%{left:54%;top:50%;transform:scale(.8) rotate(0)}}
-}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090016;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{color:#fff}
+#app{position:relative;width:100%;height:100%;overflow:hidden;background:
+ radial-gradient(circle at 50% 35%,rgba(255,63,154,.16),transparent 28%),
+ radial-gradient(circle at 20% 80%,rgba(80,90,255,.14),transparent 32%),
+ linear-gradient(145deg,#05000c,#12001f 48%,#05000d)}
+canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#stars{z-index:1}
+#fx{z-index:8}
+.vignette{position:absolute;inset:0;z-index:20;pointer-events:none;background:radial-gradient(circle,transparent 45%,rgba(0,0,0,.48) 100%)}
+.ui{position:absolute;inset:0;z-index:10;display:grid;place-items:center;padding:22px}
+.intro{text-align:center;max-width:720px;transition:1s ease;transform:translateY(0);opacity:1}
+.intro.hide{opacity:0;transform:translateY(-30px);pointer-events:none}
+.kicker{font-size:clamp(13px,2.5vw,18px);letter-spacing:.3em;text-transform:uppercase;opacity:.72;margin-bottom:14px}
+.title{font-size:clamp(32px,8vw,72px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.04em;text-shadow:0 0 35px rgba(255,82,172,.55)}
+.title .pink{background:linear-gradient(90deg,#fff,#ff9ed3,#ffd2eb);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hint{margin-top:18px;font-size:14px;opacity:.65}
+.envelope-wrap{position:relative;width:min(82vw,420px);height:min(64vw,300px);perspective:1200px;cursor:pointer;filter:drop-shadow(0 25px 35px rgba(0,0,0,.4));transition:.8s cubic-bezier(.2,.8,.2,1)}
+.envelope-wrap:hover{transform:translateY(-8px) scale(1.015)}
+.envelope{position:absolute;inset:0;transform-style:preserve-3d}
+.env-back{position:absolute;inset:0;border-radius:18px;background:linear-gradient(135deg,#65145c,#b72b77);box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);overflow:hidden}
+.env-back:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 35%,rgba(0,0,0,.16))}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(145deg,#8b1c68,#d84b91);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;z-index:4;transition:1s cubic-bezier(.2,.8,.2,1);backface-visibility:hidden}
+.pocket{position:absolute;left:0;right:0;bottom:0;height:68%;background:linear-gradient(145deg,#78175f,#b62b76);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:5}
+.seal{position:absolute;z-index:7;left:50%;top:54%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#ffb2d7,#ef2d84 58%,#8d0f59);box-shadow:0 0 0 5px rgba(255,255,255,.09),0 0 35px rgba(255,52,157,.55);font-size:27px;transition:.7s}
+.letter{position:absolute;z-index:3;left:8%;right:8%;top:10%;height:82%;border-radius:12px;background:linear-gradient(150deg,#fff,#ffeef8);color:#7a1557;padding:25px 22px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.2);transform:translateY(42%);transition:1s cubic-bezier(.2,.8,.2,1)}
+.letter b{display:block;font-size:clamp(22px,5vw,32px)}
+.letter small{display:block;margin-top:8px;opacity:.7}
+.open .flap{transform:rotateX(180deg)}
+.open .letter{transform:translateY(-5%)}
+.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.5)}
+.open .envelope-wrap{transform:scale(.96)}
+.cta{position:absolute;bottom:7vh;left:50%;transform:translateX(-50%);border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;border-radius:999px;padding:12px 18px;backdrop-filter:blur(12px);font-weight:600;letter-spacing:.02em;transition:.4s;z-index:12}
+.open .cta{opacity:0;pointer-events:none;transform:translate(-50%,10px)}
+#celebrate{position:absolute;inset:0;z-index:11;display:none;place-items:center;pointer-events:none}
+#celebrate.show{display:grid}
+.content{text-align:center;padding:20px;width:min(94vw,850px);animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(45px) scale(.92)}to{opacity:1;transform:none}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.07);backdrop-filter:blur(12px);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.big-heart{width:90px;height:90px;margin:18px auto 14px;position:relative;transform:rotate(-45deg);filter:drop-shadow(0 0 30px rgba(255,45,143,.7));animation:heartbeat 1.35s ease-in-out infinite}
+.big-heart:before,.big-heart:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ff4aa2,#ff126d)}
+.big-heart:before{top:-45px;left:0}.big-heart:after{top:0;left:45px}.big-heart{background:linear-gradient(135deg,#ff4aa2,#ff126d)}
+@keyframes heartbeat{0%,100%{transform:rotate(-45deg) scale(1)}15%{transform:rotate(-45deg) scale(1.13)}30%{transform:rotate(-45deg) scale(1)}45%{transform:rotate(-45deg) scale(1.08)}60%{transform:rotate(-45deg) scale(1)}}
+h1{font-size:clamp(38px,10vw,92px);line-height:.92;margin:0;letter-spacing:-.055em}
+.name{display:block;margin-top:12px;font-size:clamp(42px,11vw,105px);font-weight:900;letter-spacing:-.06em;background:linear-gradient(90deg,#fff,#ff9ed1,#ffd4ea,#fff);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:300%}}
+.sub{margin:20px auto 0;max-width:620px;font-size:clamp(15px,3.5vw,22px);line-height:1.55;color:rgba(255,255,255,.8)}
+.typing{min-height:1.5em}
+.cursor{display:inline-block;width:2px;height:1em;background:#fff;margin-left:4px;vertical-align:-.12em;animation:blink .7s infinite}
+@keyframes blink{50%{opacity:0}}
+.actions{margin-top:25px;display:flex;justify-content:center;gap:10px;pointer-events:auto}
+button{font:inherit}
+.replay,.sound{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:10px 15px;backdrop-filter:blur(10px);cursor:pointer}
+.sound{width:42px;height:42px;padding:0}
+.tiny{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:11px;opacity:.45;z-index:30;white-space:nowrap}
+.flash{position:absolute;inset:0;background:#fff;z-index:25;opacity:0;pointer-events:none}
+.flash.go{animation:flash .65s ease-out}
+@keyframes flash{0%{opacity:.75}100%{opacity:0}}
+@media(max-width:600px){.envelope-wrap{height:230px}.letter{padding:18px 12px}.seal{width:56px;height:56px}.tiny{display:none}}
 </style>
 </head>
 <body>
-<div id="scene">
-<div class="stars" id="stars"></div>
-<div class="intro" id="intro">✨ A little birthday surprise for you ✨</div>
+<div id="app">
+<canvas id="stars"></canvas>
+<canvas id="fx"></canvas>
+<div class="vignette"></div>
+<div class="flash" id="flash"></div>
 
-<div class="heart-area" id="heartArea">
-<div class="heart"></div>
-<div class="shine"></div>
+<div class="ui" id="introScreen">
+  <div class="intro" id="intro">
+    <div class="kicker">A tiny surprise for someone special</div>
+    <h2 class="title">Open your <span class="pink">birthday</span> surprise ✨</h2>
+    <div class="hint">Tap the envelope</div>
+    <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Open birthday envelope">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="letter"><b>For Ranjeet ❤️</b><small>There is something waiting inside...</small></div>
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="seal">♥</div>
+      </div>
+    </div>
+    <button class="cta" id="cta">Tap to open ✨</button>
+  </div>
 </div>
 
-<button class="arrow-button" id="arrowButton" aria-label="Shoot arrow">
-<div class="arrow"></div>
-<div class="click-text">✨ Click the arrow ✨</div>
-</button>
-
-<div class="impact" id="impact"></div>
-
-<div class="message" id="message">
-<h1>Happy Birthday</h1>
-<span class="name">Ranjeet ❤️</span>
-<div class="subtitle">May your day be filled with love & happiness ✨</div>
+<div id="celebrate">
+  <div class="content">
+    <div class="badge">✨ Today is your day ✨</div>
+    <div class="big-heart"></div>
+    <h1>Happy Birthday</h1>
+    <span class="name">Ranjeet ❤️</span>
+    <div class="sub"><span id="typing"></span><span class="cursor"></span></div>
+    <div class="actions">
+      <button class="sound" id="sound" aria-label="Toggle sound">🔊</button>
+      <button class="replay" id="replay">↻ Replay</button>
+    </div>
+  </div>
 </div>
-
-<button class="replay" id="replay">↻ Replay Surprise</button>
+<div class="tiny">Made with ✨ for Ranjeet</div>
 </div>
 
 <script>
-const scene=document.getElementById("scene");
-const arrowButton=document.getElementById("arrowButton");
-const heartArea=document.getElementById("heartArea");
-const impact=document.getElementById("impact");
-const message=document.getElementById("message");
-const intro=document.getElementById("intro");
-const replay=document.getElementById("replay");
-let started=false;
+const stars=document.getElementById('stars'), fx=document.getElementById('fx');
+const sctx=stars.getContext('2d'), fctx=fx.getContext('2d');
+let W,H,dpr,starList=[],particles=[],rockets=[],confetti=[],hearts=[],opened=false,soundOn=true,raf;
 
-function createStars(){
-const c=document.getElementById("stars"); c.innerHTML="";
-for(let i=0;i<90;i++){
-const s=document.createElement("div"); s.className="star";
-s.style.left=Math.random()*100+"%"; s.style.top=Math.random()*100+"%";
-s.style.animationDelay=Math.random()*3+"s";
-s.style.animationDuration=(1.5+Math.random()*3)+"s"; c.appendChild(s);
-}}
-
-function createParticles(){
-const colors=["#ff238f","#ff67b7","#ffd1eb","#fff","#ffd700","#b78cff"];
-for(let i=0;i<100;i++){
-const p=document.createElement("div"); p.className="particle";
-const a=Math.random()*Math.PI*2, d=80+Math.random()*330;
-p.style.setProperty("--x",Math.cos(a)*d+"px");
-p.style.setProperty("--y",Math.sin(a)*d+"px");
-p.style.background=colors[Math.floor(Math.random()*colors.length)];
-p.style.width=(3+Math.random()*7)+"px"; p.style.height=(3+Math.random()*7)+"px";
-scene.appendChild(p); requestAnimationFrame(()=>p.classList.add("explode"));
-setTimeout(()=>p.remove(),2200);
-}}
-
-function createFirework(x,y){
-const colors=["#ff238f","#ffd700","#fff","#7ee8ff","#ff8bd0"];
-for(let i=0;i<28;i++){
-const d=document.createElement("div"); d.className="firework";
-d.style.left=x+"%"; d.style.top=y+"%";
-const a=Math.random()*Math.PI*2, r=40+Math.random()*90;
-d.style.setProperty("--fx",Math.cos(a)*r+"px");
-d.style.setProperty("--fy",Math.sin(a)*r+"px");
-d.style.background=colors[Math.floor(Math.random()*colors.length)];
-scene.appendChild(d); requestAnimationFrame(()=>d.classList.add("go"));
-setTimeout(()=>d.remove(),1200);
-}}
-
-function createFloatingHearts(){
-for(let i=0;i<28;i++){
-const h=document.createElement("div"); h.className="float-heart";
-h.innerHTML=Math.random()>.5?"❤️":"♡";
-h.style.left=Math.random()*100+"%";
-h.style.fontSize=(14+Math.random()*28)+"px";
-h.style.setProperty("--duration",(5+Math.random()*6)+"s");
-h.style.animationDelay=Math.random()*5+"s";
-scene.appendChild(h); setTimeout(()=>h.classList.add("go"),100);
-setTimeout(()=>h.remove(),13000);
-}}
-
-function createConfetti(){
-const colors=["#ff238f","#ffd700","#fff","#7ee8ff","#a88bff","#ff8bd0"];
-for(let i=0;i<90;i++){
-const c=document.createElement("div"); c.className="confetti";
-c.style.left=Math.random()*100+"%";
-c.style.background=colors[Math.floor(Math.random()*colors.length)];
-c.style.width=(4+Math.random()*6)+"px"; c.style.height=(7+Math.random()*12)+"px";
-c.style.setProperty("--duration",(4+Math.random()*5)+"s");
-c.style.animationDelay=Math.random()*2+"s";
-scene.appendChild(c); setTimeout(()=>c.classList.add("go"),100);
-setTimeout(()=>c.remove(),10000);
-}}
-
-function shootArrow(){
-if(started)return; started=true;
-arrowButton.classList.add("flying"); intro.classList.add("hide");
-setTimeout(()=>{heartArea.classList.add("hit");impact.classList.add("show");createParticles()},1400);
-setTimeout(()=>{
-message.classList.add("show"); createConfetti(); createFloatingHearts();
-createFirework(20,28);
-setTimeout(()=>createFirework(80,25),500);
-setTimeout(()=>createFirework(50,35),1000);
-setTimeout(()=>createFirework(12,60),1500);
-setTimeout(()=>createFirework(88,60),1900);
-replay.classList.add("show");
-},2500);
+function resize(){
+ dpr=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight;
+ [stars,fx].forEach(c=>{c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px'});
+ sctx.setTransform(dpr,0,0,dpr,0,0); fctx.setTransform(dpr,0,0,dpr,0,0);
+ starList=Array.from({length:Math.min(150,Math.floor(W*H/7000))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.2,a:Math.random(),v:Math.random()*.018+.004}));
 }
+addEventListener('resize',resize); resize();
 
-function resetAnimation(){
-started=false;
-arrowButton.classList.remove("flying"); heartArea.classList.remove("hit");
-impact.classList.remove("show"); message.classList.remove("show");
-replay.classList.remove("show"); intro.classList.remove("hide");
-void arrowButton.offsetWidth; void heartArea.offsetWidth;
-void impact.offsetWidth; void message.offsetWidth; createStars();
+function starsLoop(){
+ sctx.clearRect(0,0,W,H);
+ for(const s of starList){s.a+=s.v;let a=.2+.55*(.5+.5*Math.sin(s.a*8));sctx.globalAlpha=a;sctx.fillStyle='#fff';sctx.beginPath();sctx.arc(s.x,s.y,s.r,0,Math.PI*2);sctx.fill()}
+ sctx.globalAlpha=1; requestAnimationFrame(starsLoop)
 }
+starsLoop();
 
-arrowButton.addEventListener("click",shootArrow);
-replay.addEventListener("click",resetAnimation);
-createStars();
+function burst(x,y,n=80,power=5){
+ for(let i=0;i<n;i++){let a=Math.random()*Math.PI*2,sp=Math.random()*power+.8;particles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1,dec:.012+Math.random()*.018,size:Math.random()*3+1,hue:Math.random()*50+320})}
+}
+function firework(x,y){
+ let sy=H+10,tx=x,ty=y;rockets.push({x:W*x/100,y:sy,tx:W*x/100,ty:H*y/100,done:false});
+}
+function spawnConfetti(){
+ for(let i=0;i<130;i++)confetti.push({x:Math.random()*W,y:-20-Math.random()*H*.4,vx:(Math.random()-.5)*2,vy:2+Math.random()*4,r:Math.random()*6+3,rot:Math.random()*6,vr:(Math.random()-.5)*.2,h:Math.random()*360});
+}
+function floatHearts(){
+ for(let i=0;i<18;i++)hearts.push({x:Math.random()*W,y:H+30,vy:.5+Math.random()*1.3,size:10+Math.random()*22,a:.8,drift:Math.random()*Math.PI*2});
+}
+function drawFX(){
+ fctx.clearRect(0,0,W,H);
+ // rockets
+ for(let i=rockets.length-1;i>=0;i--){let r=rockets[i],dx=r.tx-r.x,dy=r.ty-r.y,d=Math.hypot(dx,dy),step=8;
+  r.x+=dx/d*step;r.y+=dy/d*step;fctx.fillStyle='rgba(255,255,255,.9)';fctx.beginPath();fctx.arc(r.x,r.y,2,0,7);fctx.fill();
+  if(d<12){burst(r.tx,r.ty,75,5);rockets.splice(i,1)}
+ }
+ // particles
+ for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.992;p.life-=p.dec;
+  if(p.life<=0){particles.splice(i,1);continue}
+  fctx.globalAlpha=p.life;fctx.fillStyle=`hsl(${p.hue},100%,${65+p.life*25}%)`;fctx.beginPath();fctx.arc(p.x,p.y,p.size*p.life,0,7);fctx.fill()
+ }
+ // confetti
+ for(let i=confetti.length-1;i>=0;i--){let c=confetti[i];c.x+=c.vx;c.y+=c.vy;c.vy+=.025;c.rot+=c.vr;
+  fctx.save();fctx.translate(c.x,c.y);fctx.rotate(c.rot);fctx.globalAlpha=.85;fctx.fillStyle=`hsl(${c.h},90%,70%)`;fctx.fillRect(-c.r/2,-c.r/4,c.r,c.r/2);fctx.restore();
+  if(c.y>H+30)confetti.splice(i,1)
+ }
+ // hearts
+ for(let i=hearts.length-1;i>=0;i--){let h=hearts[i];h.y-=h.vy;h.x+=Math.sin(h.y*.012+h.drift)*.45;h.a-=.002;
+  if(h.a<=0){hearts.splice(i,1);continue}
+  fctx.globalAlpha=h.a;fctx.font=`${h.size}px serif`;fctx.fillStyle='#ff6db5';fctx.fillText('♥',h.x,h.y)
+ }
+ fctx.globalAlpha=1;raf=requestAnimationFrame(drawFX)
+}
+drawFX();
+
+function chime(){
+ if(!soundOn)return;
+ try{const A=new AudioContext(),o=A.createOscillator(),g=A.createGain();o.type='sine';o.frequency.setValueAtTime(660,A.currentTime);o.frequency.exponentialRampToValueAtTime(990,A.currentTime+.28);g.gain.setValueAtTime(.0001,A.currentTime);g.gain.exponentialRampToValueAtTime(.16,A.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,A.currentTime+.5);o.connect(g).connect(A.destination);o.start();o.stop(A.currentTime+.52)}catch(e){}
+}
+function typeText(){
+ const el=document.getElementById('typing'),text="May this new year of your life bring you beautiful memories, big smiles, endless happiness and all the love you deserve. Keep shining! ✨";
+ el.textContent='';let i=0;
+ const t=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length)clearInterval(t)},32);
+}
+function celebrate(){
+ document.getElementById('introScreen').style.display='none';
+ document.getElementById('celebrate').classList.add('show');
+ document.getElementById('flash').classList.add('go');
+ burst(W/2,H*.48,150,8);spawnConfetti();floatHearts();
+ [ [50,23],[18,34],[82,30],[28,58],[72,55],[50,72] ].forEach((p,i)=>setTimeout(()=>firework(p[0],p[1]),i*420));
+ typeText(); chime();
+}
+function open(){
+ if(opened)return; opened=true;
+ document.getElementById('envelope').classList.add('open');
+ document.getElementById('intro').classList.add('hide');
+ chime();
+ setTimeout(celebrate,1500);
+}
+document.getElementById('envelopeWrap').addEventListener('click',open);
+document.getElementById('cta').addEventListener('click',open);
+document.getElementById('envelopeWrap').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')open()});
+document.getElementById('replay').addEventListener('click',()=>location.reload());
+document.getElementById('sound').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.textContent=soundOn?'🔊':'🔇'});
+
+// ambient fireflies
+setInterval(()=>{if(opened && Math.random()<.7)burst(Math.random()*W,H*(.15+.65*Math.random()),4,1.2)},450);
 </script>
 </body>
 </html>
